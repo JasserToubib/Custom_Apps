@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include saleh *.css
+recursive-include saleh *.csv
+recursive-include saleh *.html
+recursive-include saleh *.ico
+recursive-include saleh *.js
+recursive-include saleh *.json
+recursive-include saleh *.md
+recursive-include saleh *.png
+recursive-include saleh *.py
+recursive-include saleh *.svg
+recursive-include saleh *.txt
+recursive-exclude saleh *.pyc
