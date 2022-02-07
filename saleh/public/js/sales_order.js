@@ -25,7 +25,7 @@ frappe.ui.form.on("Sales Order", {
 		});
 	},
 	refresh: function(frm){
-		if (from.doc.customer){
+		if (frm.doc.customer){
 	                frappe.call({
                         'method': 'frappe.client.get_value',
                         'args': {
