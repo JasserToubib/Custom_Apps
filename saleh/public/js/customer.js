@@ -5,7 +5,6 @@ frappe.ui.form.on('Customer', {
 	if (regex.test(frm.doc.custom_customer_mobile) === true){
 		msgprint(__("Customer Mobile: Only numbers are allowed."));
 		validated = false;
-		return false;
 	}
     }
 })
