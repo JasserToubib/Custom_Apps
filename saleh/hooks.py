@@ -100,7 +100,11 @@ doctype_js = {"Sales Order" : "public/js/sales_order.js"}
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
+	"daily": [
+               "saleh.tasks.daily"
+       ]
+}
 # 	"all": [
 # 		"saleh.tasks.all"
 # 	],
@@ -116,7 +120,7 @@ doctype_js = {"Sales Order" : "public/js/sales_order.js"}
 # 	"monthly": [
 # 		"saleh.tasks.monthly"
 # 	]
-# }
+#}
 
 # Testing
 # -------
