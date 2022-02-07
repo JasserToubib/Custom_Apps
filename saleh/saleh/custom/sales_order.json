@@ -11,6 +11,19 @@
       "reqd": 0,
       "options": "Payment Entry",
       "label": "Payment Entry"
+    },
+    {
+      "creation": "2022-02-01 11:00:05.000000",
+      "modified": "2022-02-03 11:00:06.000000",
+      "dt": "Sales Order",
+      "insert_after": "so_payment_type_cf",
+      "fieldname": "custom_customer_mobile",
+      "depends_on": "eval:doc.customer",
+      "fetch_from": "customer.custom_customer_mobile",
+      "fieldtype": "Data",
+      "length": 10,
+      "reqd": 0,
+      "label": "Customer Mobile"
     }
    ],
   "custom_perms": [],

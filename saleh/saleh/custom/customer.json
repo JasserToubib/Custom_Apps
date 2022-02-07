@@ -1,0 +1,20 @@
+{
+  "custom_fields": [
+    {
+      "creation": "2022-02-01 11:00:05.000000",
+      "modified": "2022-02-03 11:00:06.000000",
+      "dt": "Customer",
+      "insert_after": "lead_name",
+      "fieldname": "custom_customer_mobile",
+      "length": 10,
+      "fieldtype": "Data",
+      "reqd": 0,
+      "label": "Customer Mobile"
+    }
+   ],
+  "custom_perms": [],
+  "doctype": "Customer",
+  "property_setters": [],
+  "sync_on_migrate": 1
+
+}
