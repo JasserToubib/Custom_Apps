@@ -24,27 +24,6 @@ frappe.ui.form.on("Sales Order", {
 			}
 		});
 	},
-/*	refresh: function(frm){
-		if (frm.doc.customer){
-	                frappe.call({
-                        'method': 'frappe.client.get_value',
-                        'args': {
-                        'doctype': 'Customer',
-                        'filters': [
-                                ['Customer', 'name', '=',frm.doc.customer]
-                        ],
-                        'fieldname':'bank_customer'
-                        },
-                        'callback': function(res){
-                                if (res.message.bank_customer == 0){
-                                        frm.toggle_reqd('custom_payment_entry', res.message.bank_customer === 0);
-                                        console.log(res.message.bank_customer);
-                                }
-                        }
-                });
-
-		}
-	},*/
 	customer: function(frm){
 		frappe.call({
         		'method': 'frappe.client.get_value',
