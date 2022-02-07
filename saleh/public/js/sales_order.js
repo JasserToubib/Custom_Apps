@@ -35,8 +35,8 @@ frappe.ui.form.on("Sales Order", {
            		'fieldname':'bank_customer'
         		},
         		'callback': function(res){
-            			if (res.message.bank_customer == 1){
-            				frm.toggle_reqd('custom_payment_entry', res.message.bank_customer === 1);
+            			if (res.message.bank_customer == 0){
+            				frm.toggle_reqd('custom_payment_entry', res.message.bank_customer === 0);
             				console.log(res.message.bank_customer);
 				}
         		}
