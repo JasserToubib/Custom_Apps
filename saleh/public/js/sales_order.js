@@ -23,5 +23,23 @@ frappe.ui.form.on("Sales Order", {
 			
 			}
 		});
+	},
+	customer: function(frm){
+		frappe.call({
+        		'method': 'frappe.client.get_value',
+        		'args': {
+            		'doctype': 'Customer',
+            		'filters': [
+                		['Customer', 'name', '=',frm.doc.customer]
+            		],
+           		'fieldname':'bank_customer'
+        		},
+        		'callback': function(res){
+            			if (res.message.bank_customer == 1){
+            				frm.toggle_reqd('custom_payment_entry', res.message.bank_customer === 1);
+            				console.log(res.message.bank_customer);
+				}
+        		}
+    		});
 	}
 });
