@@ -37,6 +37,7 @@ frappe.ui.form.on("Sales Order", {
         		'callback': function(res){
             			if (res.message.bank_customer == 0){
             				frm.toggle_reqd('custom_payment_entry', res.message.bank_customer === 0);
+					frm.add_fetch('customer','custom_customer_mobile','custom_customer_mobile');
             				console.log(res.message.bank_customer);
 				}
         		}

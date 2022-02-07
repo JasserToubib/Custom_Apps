@@ -31,7 +31,11 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Sales Order" : "public/js/sales_order.js"}
+doctype_js = {
+	"Sales Order" : "public/js/sales_order.js",
+	"Customer": "public/js/customer.js",
+	"Delivery Note": "public/js/deliver_note.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
