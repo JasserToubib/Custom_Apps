@@ -31,7 +31,9 @@ frappe.ui.form.on('Delivery Note', {
                         'callback': function(res){
                                 if (res.message.custom_customer_mobile){
                                         frm.set_value("custom_customer_mobile", res.message.custom_customer_mobile || '');
-                                }
+                                }else{
+					frm.set_value("custom_customer_mobile", '');
+				}
                         }
                 });
                 //frm.add_fetch('sub_customer','custom_customer_mobile','custom_customer_mobile');
