@@ -6,7 +6,6 @@
       "dt": "Customer",
       "insert_after": "lead_name",
       "fieldname": "custom_customer_mobile",
-      "length": 10,
       "fieldtype": "Data",
       "reqd": 0,
       "label": "Customer Mobile"
