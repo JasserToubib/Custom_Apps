@@ -16,6 +16,10 @@ frappe.ui.form.on('Delivery Note', {
                                 }
                         }
                 });
-        }
+        },
+    sub_customer: function(frm){
+		console.log("hello delivery");
+                frm.add_fetch('sub_customer','custom_customer_mobile','custom_customer_mobile');
+     }
 
 });

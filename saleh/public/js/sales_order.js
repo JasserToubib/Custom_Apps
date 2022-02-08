@@ -42,5 +42,10 @@ frappe.ui.form.on("Sales Order", {
 				}
         		}
     		});
-	}
+	},
+	sub_customer: function(frm){
+		console.log("hello2");
+                frm.add_fetch('sub_customer','custom_customer_mobile','custom_customer_mobile');
+        }
+
 });
