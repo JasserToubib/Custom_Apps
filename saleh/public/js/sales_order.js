@@ -56,7 +56,7 @@ frappe.ui.form.on("Sales Order", {
                         },
                         'callback': function(res){
                                 if (res.message.custom_customer_mobile){
-                                        frm.set_value(frm.doc.custom_customer_mobile, res.message.custom_customer_mobile || '');
+                                        frm.set_value("custom_customer_mobile", res.message.custom_customer_mobile || '');
                                 }
                         }
                 });
