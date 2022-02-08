@@ -8,6 +8,7 @@ frappe.ui.form.on("Sales Order", {
 						["Payment Entry","party", "=", frm.doc.customer],
 						["Payment Entry","unallocated_amount",">=",1000],
 						["Payment Entry","payment_type","=","Receive"],
+						["Payment Entry","status","=","Submitted"],
 						["Payment Entry","docstatus","!=",2]
 					]
 				}
@@ -16,6 +17,7 @@ frappe.ui.form.on("Sales Order", {
                                         filters: [
                                                 ["Payment Entry","party", "=", frm.doc.sub_customer],
                                                 ["Payment Entry","unallocated_amount",">=",1000],
+						["Payment Entry","status","=","Submitted"],
                                                 ["Payment Entry","payment_type","=","Receive"],
                                                 ["Payment Entry","docstatus","!=",2]
                                         ]
