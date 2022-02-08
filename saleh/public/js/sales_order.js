@@ -1,4 +1,23 @@
 frappe.ui.form.on("Sales Order", {
+	custom_payment_entry: function(frm){
+		frappe.call({
+                        'method': 'frappe.client.get_value',
+                        'args': {
+                        'doctype': 'Sales Order',
+                        'filters': [
+                                ['Sales Order', 'custom_payment_entry', '=',cur_frm.doc.custom_payment_entry]
+                        ],
+                        'fieldname':'custom_payment_entry'
+                        },
+                        'callback': function(res){
+                                if (res.message.custom_payment_entry){
+					msgprint(__("Payment Entery: This payment entry is already assined with another sales order."));
+                			frappe.validated = false;
+                                        
+                                }
+                        }
+                });
+	},
 	setup: function(frm) {
 		
 		frm.set_query("custom_payment_entry", function() {
