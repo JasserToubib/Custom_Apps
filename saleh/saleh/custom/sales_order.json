@@ -20,7 +20,6 @@
       "fieldname": "custom_customer_mobile",
       "depends_on": "eval:doc.customer",
       "fieldtype": "Data",
-      "length": 10,
       "read_only":1,
       "reqd": 0,
       "label": "Customer Mobile"
