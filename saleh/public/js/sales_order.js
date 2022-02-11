@@ -1,3 +1,4 @@
+var s=0;
 frappe.ui.form.on("Sales Order", {
 	custom_payment_entry: function(frm){
 		frappe.call({
@@ -36,6 +37,24 @@ frappe.ui.form.on("Sales Order", {
                                 }
                         }
                 });
+		if (s == 1){
+			frappe.call({
+                        'method': 'frappe.client.get_value',
+                        'args': {
+                        'doctype': 'Customer',
+                        'filters': [
+                                ['Customer', 'name', '=',frm.doc.sub_customer]
+                        ],
+                        'fieldname':'custom_customer_mobile'
+                        },
+                        'callback': function(res){
+                                if (res.message.custom_customer_mobile){
+                                        frm.set_value("custom_customer_mobile", res.message.custom_customer_mobile || '');
+                                        //frm.doc.custom_customer_mobile = res.message.custom_customer_mobile;
+                                }
+                        }
+                });
+		}
 	},
 	setup: function(frm) {
 		
@@ -79,6 +98,7 @@ frappe.ui.form.on("Sales Order", {
             				frm.toggle_reqd('custom_payment_entry', res.message.bank_customer === 0);
 					frm.add_fetch('customer','custom_customer_mobile','custom_customer_mobile');
             				console.log(res.message.bank_customer);
+					s=0;
 				}
         		}
     		});
@@ -96,6 +116,7 @@ frappe.ui.form.on("Sales Order", {
                         },
                         'callback': function(res){
                                 if (res.message.custom_customer_mobile){
+					s=1;
                                         frm.set_value("custom_customer_mobile", res.message.custom_customer_mobile || '');
 					frm.doc.custom_customer_mobile = res.message.custom_customer_mobile;
                                 }
