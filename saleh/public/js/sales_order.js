@@ -20,6 +20,28 @@ frappe.ui.form.on("Sales Order", {
                 });
 	},
 	before_save: function(frm){
+	console.log("hello2");
+		if (frm.doc.sub_customer){
+		console.log("hello 5")
+                frappe.call({
+                        'method': 'frappe.client.get_value',
+                        'args': {
+                        'doctype': 'Customer',
+                        'filters': [
+                                ['Customer', 'name', '=',frm.doc.sub_customer]
+                        ],
+                        'fieldname':'custom_customer_mobile'
+                        },
+                        'callback': function(res){
+                                if (res.message.custom_customer_mobile){
+                                        s=1;
+                                        frm.set_value("custom_customer_mobile", res.message.custom_customer_mobile || '');
+                                        frm.doc.custom_customer_mobile = res.message.custom_customer_mobile;
+                                }
+                        }
+                });}
+	},
+	validate: function(frm){
 		frappe.call({
                         'method': 'frappe.client.get_value',
                         'args': {
@@ -37,25 +59,6 @@ frappe.ui.form.on("Sales Order", {
                                 }
                         }
                 });
-		if (s == 1){
-			console.log("hello 3");
-			frappe.call({
-                        'method': 'frappe.client.get_value',
-                        'args': {
-                        'doctype': 'Customer',
-                        'filters': [
-                                ['Customer', 'name', '=',frm.doc.sub_customer]
-                        ],
-                        'fieldname':'custom_customer_mobile'
-                        },
-                        'callback': function(res){
-                                if (res.message.custom_customer_mobile){
-                                        frm.set_value("custom_customer_mobile", res.message.custom_customer_mobile || '');
-                                        //frm.doc.custom_customer_mobile = res.message.custom_customer_mobile;
-                                }
-                        }
-                });
-		}
 	},
 	setup: function(frm) {
 		
