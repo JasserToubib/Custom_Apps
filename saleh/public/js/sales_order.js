@@ -19,7 +19,7 @@ frappe.ui.form.on("Sales Order", {
                         }
                 });
 	},
-	validate: function(frm){
+	before_save: function(frm){
 		frappe.call({
                         'method': 'frappe.client.get_value',
                         'args': {
@@ -38,6 +38,7 @@ frappe.ui.form.on("Sales Order", {
                         }
                 });
 		if (s == 1){
+			console.log("hello 3");
 			frappe.call({
                         'method': 'frappe.client.get_value',
                         'args': {
