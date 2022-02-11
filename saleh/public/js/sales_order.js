@@ -21,7 +21,7 @@ frappe.ui.form.on("Sales Order", {
 	},
 	before_save: function(frm){
 	console.log("hello2");
-		if (frm.doc.sub_customer){
+		if (frm.doc.sub_customer != undefined){
 		console.log("hello 5")
                 frappe.call({
                         'method': 'frappe.client.get_value',
@@ -102,31 +102,9 @@ frappe.ui.form.on("Sales Order", {
             				frm.toggle_reqd('custom_payment_entry', res.message.bank_customer === 0);
 					frm.add_fetch('customer','custom_customer_mobile','custom_customer_mobile');
             				console.log(res.message.bank_customer);
-					s=0;
 				}
         		}
     		});
-	},
-	sub_customer: function(frm){
-		console.log("hello2");
-		frappe.call({
-                        'method': 'frappe.client.get_value',
-                        'args': {
-                        'doctype': 'Customer',
-                        'filters': [
-                                ['Customer', 'name', '=',frm.doc.sub_customer]
-                        ],
-                        'fieldname':'custom_customer_mobile'
-                        },
-                        'callback': function(res){
-                                if (res.message.custom_customer_mobile){
-					s=1;
-                                        frm.set_value("custom_customer_mobile", res.message.custom_customer_mobile || '');
-					frm.doc.custom_customer_mobile = res.message.custom_customer_mobile;
-                                }
-                        }
-                });
-                //frm.add_fetch('sub_customer','custom_customer_mobile','custom_customer_mobile');
-        }
+	}
 
 });
