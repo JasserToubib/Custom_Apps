@@ -106,7 +106,7 @@ doctype_js = {
 
 scheduler_events = {
 	"daily": [
-               "saleh.tasks.daily"
+               "saleh.tasks.change_sales_order_statues"
        ]
 }
 # 	"all": [
