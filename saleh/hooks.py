@@ -9,6 +9,10 @@ app_color = "grey"
 app_email = "jassertoubib@gmail.com"
 app_license = "MIT"
 
+
+override_doctype_class = {
+    "Sales Order": "saleh.overrides.sales_order.CustomSalesOrder"
+}
 # Includes in <head>
 # ------------------
 
