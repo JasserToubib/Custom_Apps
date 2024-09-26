@@ -1,1 +1,1 @@
-alert(document.domain)
+<script>var secret='if3 secret!';alert(document.domain);alert(parent.document.domain)</script>
