@@ -1,0 +1,1 @@
+{ "config": { "page_groups": null }, "page_group_nodes": [{ "type": "type_node", "feature_group": "-->feature_group_node<img src=x onerror=alert(1)><!--" }], "nodes": [{ "type": "type_node", "feature_group": "-->feature_group_node<img src=x onerror=alert(1)><!--" }] }
