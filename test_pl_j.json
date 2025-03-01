@@ -1,0 +1,154 @@
+{
+    "message": {
+        "isEnabled": false
+    },
+    "clientStepsCompleted": [
+        1,
+        4,
+        404,
+        2,
+        3
+    ],
+    "config": {
+        "statuses": [{
+                "statusId": 1,
+                "statusLabel": "Bronze",
+                "minPoints": 0
+            },
+            {
+                "statusId": 2,
+                "statusLabel": "Silver<img src=x onerror=&#x61;&#x6c;&#x65;&#x72;&#x74;(document.domain)>",
+                "minPoints": 150
+            },
+            {
+                "statusId": 3,
+                "statusLabel": "Gold",
+                "minPoints": 4000
+            },
+            {
+                "statusId": 4,
+                "statusLabel": "Platinum",
+                "minPoints": 30000
+            },
+            {
+                "statusId": 5,
+                "statusLabel": "Diamond",
+                "minPoints": 250000
+            },
+            {
+                "statusId": 6,
+                "statusLabel": "Royal Diamond",
+                "minPoints": 2000000
+            },
+            {
+                "statusId": 7,
+                "statusLabel": "Black Diamond",
+                "minPoints": 8000000
+            }
+        ],
+        "trVersion": "1.0",
+        "cdnWebsiteUrl": "https://trs-cdn.playtika.com/assets/gdpr_popup_3_103_3",
+        "statusChangeRetryCount": 3,
+        "retryBackoff": 25,
+        "trUrl": "https://socialgaming.totalrewards.com/trs",
+        "trApiKey": "548aeee5baef5dec9a08e2c2fbe25077a8d8981d",
+        "newUserStatusPoints": 20,
+        "dwUrl": "https://services.projone.net/reward/1.2/instrument",
+        "rewardCreditsCap": 10000,
+        "oneMessageUrl": "",
+        "consentManagementServiceUrl": "https://one-zuul.playtika.com/one-consent-management"
+    },
+    "timestamp": 1740869222,
+    "expiration": 1740912422,
+    "status": {
+        "statusId": 1,
+        "statusPoints": 42,
+        "statusPointsUntilStatusUp": 108,
+        "statusExpiration": 4102444799,
+        "statusPointsExpiration": 1767225599,
+        "ltPlayer": 0,
+        "statusPointsCurrentYear": 42,
+        "statusPointsCarryForward": 0,
+        "statusIdPostExpiration": 1,
+        "trEnabled": 0,
+        "trHidden": 1,
+        "trAccountId": "",
+        "lastStatusChangeTime": 1740494961,
+        "trNumber": ""
+    },
+    "exchangeRate": {
+        "statusPoints": {
+            "bonusMultiplier": 0.0,
+            "rates": [{
+                    "lowerBound": 0.0,
+                    "upperBound": 9.97,
+                    "baseRate": 9.0
+                },
+                {
+                    "lowerBound": 9.98,
+                    "upperBound": 19.97,
+                    "baseRate": 11.0
+                },
+                {
+                    "lowerBound": 19.98,
+                    "upperBound": 49.97,
+                    "baseRate": 13.0
+                },
+                {
+                    "lowerBound": 49.98,
+                    "upperBound": 99.97,
+                    "baseRate": 15.0
+                },
+                {
+                    "lowerBound": 99.98,
+                    "upperBound": 199.97,
+                    "baseRate": 18.0
+                },
+                {
+                    "lowerBound": 199.98,
+                    "upperBound": 9999.99,
+                    "baseRate": 22.0
+                }
+            ]
+        },
+        "rewardCredits": {
+            "bonusMultiplier": 0.0,
+            "rates": [{
+                    "lowerBound": 0.98,
+                    "upperBound": 49.97,
+                    "baseRate": 1.0
+                },
+                {
+                    "lowerBound": 49.98,
+                    "upperBound": 99.97,
+                    "baseRate": 1.2
+                },
+                {
+                    "lowerBound": 99.98,
+                    "upperBound": 199.97,
+                    "baseRate": 1.5
+                },
+                {
+                    "lowerBound": 199.98,
+                    "upperBound": 9999.99,
+                    "baseRate": 2.0
+                }
+            ]
+        },
+        "expiration": 1740912422,
+        "currency": "USD"
+    },
+    "stats": {
+        "USRPY": 0,
+        "TPYMTH": 0
+    },
+    "appRewards": {
+        "levelUp": {
+            "rewardCredits": 0,
+            "statusPoints": 2,
+            "expiration": 1740912422
+        }
+    },
+    "promotions": [],
+    "oneApiVersion": "1.4"
+}
