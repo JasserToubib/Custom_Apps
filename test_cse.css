@@ -1,4 +1,4 @@
 div {
     --val: attr(data-bambuser-liveshopping-widget-id);
-    background: image-set(url("https://jassertoubib.github.io/Custom_Apps/test_cse.css"--val))
+    background: image-set(var(--val))
 }
