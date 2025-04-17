@@ -1,0 +1,4 @@
+div {
+    --val: attr(data-bambuser-liveshopping-widget-id);
+    background: image-set(var(--val))
+}
