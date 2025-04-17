@@ -1,4 +1,4 @@
-app-root{
-    --val: attr(ng-version);
+iframe{
+    --val: attr(src);
     background: image-set(var(--val))
 }
